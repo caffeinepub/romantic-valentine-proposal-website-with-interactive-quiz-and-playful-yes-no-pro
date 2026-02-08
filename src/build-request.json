@@ -1,0 +1,40 @@
+{
+  "kind": "build_request",
+  "title": "Update revealed hidden button label to English after No button cracks",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-15",
+      "text": "Update the user-facing label text of the hidden button that is revealed after the “No” button cracks/falls so it is in English (playful tone, emojis allowed), while keeping all existing behavior unchanged: it must remain clickable, visually distinct, and must invoke the same success/celebration flow as the main “Yes” button (confetti + floating hearts + navigate to the existing success screen/message).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Use English for any user-facing text in the build request."
+        ]
+      },
+      "acceptanceCriteria": [
+        "When the user successfully clicks the dodging “No” button, the crack-and-fall animation still plays and the hidden button still appears underneath.",
+        "The revealed hidden button’s label is English (no non-English words) and retains a playful tone (emojis permitted).",
+        "Clicking the revealed hidden button triggers the exact same behavior as clicking the main “Yes” button (confetti overlay + floating hearts overlay + existing success screen with the existing success message).",
+        "The revealed hidden button is clickable on both desktop and mobile (no pointer-events/z-index issues), and remains within the visible proposal area."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
+    "Do not introduce external animation libraries; continue using existing Tailwind/global CSS keyframes approach.",
+    "Backend must remain single-actor; no backend changes are required for this UI-only update."
+  ],
+  "nonGoals": [
+    "Changing the quiz content, quiz step count, or quiz flow logic.",
+    "Changing the main proposal text (“So now there’s only one thing left to ask…” / “Will you be my Valentine?”).",
+    "Adding new backend persistence or Internet Identity changes."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

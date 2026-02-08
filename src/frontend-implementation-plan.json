@@ -1,0 +1,24 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Update hidden revealed button label to playful English",
+  "requirements": [
+    {
+      "id": "REQ-15",
+      "summary": "Change the revealed hidden button label (shown after the “No” button cracks/falls) to playful English text while keeping the existing success/celebration behavior unchanged.",
+      "acceptanceCriteria": [
+        "When the user successfully clicks the dodging “No” button, the crack-and-fall animation still plays and the hidden button still appears underneath.",
+        "The revealed hidden button’s label is English (no non-English words) and retains a playful tone (emojis permitted).",
+        "Clicking the revealed hidden button triggers the exact same behavior as clicking the main “Yes” button (confetti overlay + floating hearts overlay + existing success screen with the existing success message).",
+        "The revealed hidden button is clickable on both desktop and mobile (no pointer-events/z-index issues), and remains within the visible proposal area."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/valentine/DodgingNoButton.tsx",
+          "operation": "modify",
+          "description": "Update the revealed hidden button’s user-facing label text to playful English (emojis allowed), keeping all existing visuals/behavior intact (still uses the same onYes callback for the existing confetti + floating hearts + success screen flow). Use the existing shadcn-ui Button component as-is for consistent styling/interaction; verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

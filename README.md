@@ -1,2 +1,3 @@
-# romantic-valentine-proposal-website-with-interactive-quiz-and-playful-yes-no-pro
-Exported from Caffeine project: Romantic Valentine proposal website with interactive quiz and playful Yes/No proposal interaction
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

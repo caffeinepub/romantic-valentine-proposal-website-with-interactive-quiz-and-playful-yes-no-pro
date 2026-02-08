@@ -1,0 +1,17 @@
+{
+  "frontend/src/index.css": "Global styles with soft pink and cream OKLCH color palette for Valentine's theme, plus custom keyframe animations including the new crack-fall animation for the No button breaking effect.",
+  "frontend/src/App.tsx": "Main app component that renders the ValentineExperience with a gradient pink background.",
+  "frontend/src/components/valentine/ValentineExperience.tsx": "Top-level container managing screen state (quiz/proposal/success) and coordinating confetti/hearts overlays.",
+  "frontend/src/components/valentine/QuizFlow.tsx": "Manages the 4-step quiz flow with proper component re-mounting via key prop to ensure each question starts with fresh state, handling correct answer feedback and progression with explicit z-index layering.",
+  "frontend/src/components/valentine/quizContent.ts": "Defines the three quiz questions with multiple-choice options and correct answers as specified.",
+  "frontend/src/components/valentine/QuizQuestionCard.tsx": "Renders individual quiz questions with multiple-choice buttons, now with useEffect to reset selectedAnswer and showError state when the question prop changes, plus explicit z-index values to ensure buttons remain clickable.",
+  "frontend/src/components/valentine/CorrectAnswerFeedback.tsx": "Displays animated heart and romantic message overlay after correct answers with pointer-events-none and z-index below the question card to prevent blocking interactions.",
+  "frontend/src/components/valentine/TransitionStep.tsx": "Shows the transition text \"So now there's only one thing left to ask…\" with animated heart before moving to proposal.",
+  "frontend/src/components/valentine/ProposalScreen.tsx": "Displays the main proposal question with Yes button and dodging No button, now passing the onYes callback to DodgingNoButton so the revealed button can trigger the same celebration.",
+  "frontend/src/components/valentine/DodgingNoButton.tsx": "Renders the No button with magnetic dodge behavior that, when clicked, triggers a crack-and-fall animation and reveals a hidden \"Yes, I'll say it for you! 💕😉\" button underneath that triggers the same success flow as the main Yes button.",
+  "frontend/src/components/valentine/useNoButtonDodge.ts": "Custom hook implementing magnetic repulsion logic for the No button on both desktop and mobile, now with an enabled option to disable dodging behavior after the button is clicked.",
+  "frontend/src/components/valentine/SuccessScreen.tsx": "Final success screen displaying the romantic message after Yes is clicked.",
+  "frontend/src/components/valentine/effects/ConfettiOverlay.tsx": "Animated confetti effect overlay with falling colored pieces.",
+  "frontend/src/components/valentine/effects/FloatingHeartsOverlay.tsx": "Animated floating hearts effect overlay that rises from bottom.",
+  "frontend/tailwind.config.js": "Extended Tailwind configuration with Playfair Display serif font for romantic typography."
+}

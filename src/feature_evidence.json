@@ -1,0 +1,23 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-user-facing-label-text-of-the-hidden-button-that-is-revealed-after-the-no-button-cracks-falls-so-it-is-in-english-playful-tone-emojis-allowed-while-keeping-all-existing-behavior-unchanged-it-must-remain-clickable-visually-distinct-and-must-invoke-the-same-success-celebration-flow-as-the-main-yes-button-confetti-floating-hearts-navigate-to-the-existing-success-screen-message",
+      "featureTitle": "Update the user-facing label text of the hidden button that is revealed after the “No” button cracks/falls so it is in English (playful tone, emojis allowed), while keeping all existing behavior unchanged: it must remain clickable, visually distinct, and must invoke the same success/celebration flow as the main “Yes” button (confetti + floating hearts + navigate to the existing success screen/message).",
+      "files": [
+        "frontend/src/components/valentine/DodgingNoButton.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

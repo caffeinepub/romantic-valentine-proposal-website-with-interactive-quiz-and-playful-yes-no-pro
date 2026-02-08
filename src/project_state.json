@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 11,
+  "summary": "Romantic Valentine proposal website with a soft pink/cream theme featuring an interactive quiz leading into a proposal screen with playful animations and a mobile-friendly UI.",
+  "architectural_notes": [
+    "Ensure the No button repulsion/dodge logic respects viewport boundaries and supports both pointer (mouse) and touch inputs.",
+    "Use smooth transitions/animations between quiz and proposal screens for a playful, romantic feel.",
+    "Quiz screen stacking/visibility: ensure only the active question container is visible and receives pointer events; hidden/previous questions must have pointer-events:none and not create overlays; manage z-index/positioning so no invisible layer blocks clicks/taps (desktop + mobile).",
+    "No-button click edge case: if user clicks No, play crack/break/fall animation then swap/replace with a revealed hidden Yes button beneath; ensure revealed button is clickable (z-index/pointer-events) and triggers the same celebration flow as main Yes.",
+    "Hidden revealed button label text update: use exact text “yes azhuthu di oyaan 💕😉” (replaces prior hidden-button label); ensure it remains clickable (z-index/pointer-events) and triggers same celebration as main Yes."
+  ],
+  "known_issues": [
+    "Quiz is described as 4 questions, but only 3 questions/answers are specified; Q4 content is currently undefined.",
+    "Bug: After answering Q1, buttons in later quiz questions become unclickable (likely due to hidden containers/overlays capturing pointer events or z-index stacking issues) on desktop and mobile."
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-mobile-friendly-valentine-proposal-experience-with-a-consistent-soft-pink-and-cream-visual-theme-typography-spacing-buttons-backgrounds-and-gentle-romantic-animations",
+      "title": "Create a single-page, mobile-friendly Valentine proposal experience with a consistent soft pink and cream visual theme (typography, spacing, buttons, backgrounds) and gentle romantic animations.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-interactive-quiz-flow-as-a-4-step-experience-that-begins-on-site-load-step-1-3-are-the-specified-quiz-questions-with-answer-selection-and-validation-step-4-is-a-dedicated-transition-screen-that-smoothly-leads-into-the-proposal-screen",
+      "title": "Implement the interactive quiz flow as a 4-step experience that begins on site load: Step 1–3 are the specified quiz questions with answer selection and validation; Step 4 is a dedicated transition screen that smoothly leads into the proposal screen.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-quiz-content-exactly-as-specified-and-present-answers-as-multiple-choice-options-with-correct-answers-1-what-is-my-favorite-raja-song-correct-vellai-pura-2-what-color-shirt-was-i-wearing-on-our-1st-anniversary-correct-pink-3-what-was-the-exact-time-when-i-first-proposed-my-love-to-you-correct-12-40-am",
+      "title": "Add quiz content exactly as specified and present answers as multiple-choice options, with correct answers: (1) “What is my favorite Raja song?” correct: “Vellai Pura”. (2) “What color shirt was I wearing on our 1st anniversary?” correct: “Pink”. (3) “What was the exact time when I first proposed my love to you?” correct: “12:40 AM”.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-after-each-correct-answer-in-steps-1-3-show-a-small-heart-animation-and-or-soft-romantic-feedback-text-before-advancing",
+      "title": "After each correct answer in Steps 1–3, show a small heart animation and/or soft romantic feedback text before advancing.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-proposal-screen-that-displays-the-preface-and-main-question-exactly-as-provided-with-two-buttons-yes-and-no-preface-so-now-there-s-only-one-thing-left-to-ask-main-question-large-text-will-you-be-my-valentine",
+      "title": "Build the proposal screen that displays the preface and main question exactly as provided, with two buttons: “Yes” and “No”. Preface: “So now there’s only one thing left to ask…”. Main question (large text): “Will you be my Valentine?”",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-no-button-magnetic-repulsion-dodge-interaction-it-should-move-away-when-the-cursor-desktop-or-finger-touch-attempts-mobile-come-close-and-it-must-remain-within-screen-boundaries",
+      "title": "Implement the “No” button magnetic repulsion/dodge interaction: it should move away when the cursor (desktop) or finger/touch attempts (mobile) come close, and it must remain within screen boundaries.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-yes-is-clicked-trigger-confetti-and-floating-heart-animations-and-display-the-romantic-message-exactly-you-were-always-my-answer-today-tomorrow-and-every-valentine-after-this",
+      "title": "When “Yes” is clicked, trigger confetti and floating heart animations and display the romantic message exactly: “You were always my answer. Today, tomorrow, and every Valentine after this.”",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-quiz-interaction-bug-where-after-answering-question-1-the-answer-buttons-in-later-questions-cannot-be-clicked-ensure-each-new-question-is-interactive-buttons-are-enabled-and-respond-to-click-tap-on-both-desktop-and-mobile",
+      "title": "Fix the quiz interaction bug where, after answering Question 1, the answer buttons in later questions cannot be clicked. Ensure each new question is interactive (buttons are enabled and respond to click/tap) on both desktop and mobile.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-only-the-currently-active-quiz-question-container-is-visible-and-can-receive-pointer-events-any-hidden-previous-or-transitioning-quiz-ui-must-not-capture-clicks-taps-e-g-apply-pointer-events-none-and-or-remove-from-layout-and-stacking-order-must-not-place-invisible-layers-above-the-active-question",
+      "title": "Ensure only the currently active quiz question container is visible and can receive pointer events. Any hidden, previous, or transitioning quiz UI must not capture clicks/taps (e.g., apply pointer-events: none and/or remove from layout), and stacking order must not place invisible layers above the active question.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enhance-the-proposal-screen-no-button-interaction-so-it-continues-to-dodge-the-cursor-touch-with-magnetic-repulsion-but-if-the-user-successfully-clicks-the-no-button-it-triggers-a-playful-cracking-animation-where-the-no-button-breaks-and-falls-like-an-eggshell",
+      "title": "Enhance the proposal screen “No” button interaction so it continues to dodge the cursor/touch with magnetic repulsion, but if the user successfully clicks the “No” button it triggers a playful cracking animation where the “No” button breaks and falls like an eggshell.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-no-button-cracks-falls-reveal-a-hidden-button-underneath-with-the-exact-label-text-nice-try-now-go-press-yes-this-revealed-button-must-be-clickable-and-visually-distinct-as-the-post-fail-call-to-action",
+      "title": "When the “No” button cracks/falls, reveal a hidden button underneath with the exact label text: “nice try now go press Yes 😉”. This revealed button must be clickable and visually distinct as the post-fail call-to-action.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-revealed-hidden-button-behave-exactly-like-the-main-yes-button-clicking-it-triggers-the-same-final-celebration-flow-confetti-floating-hearts-and-navigates-to-the-existing-success-screen-with-the-existing-success-message",
+      "title": "Make the revealed hidden button behave exactly like the main “Yes” button: clicking it triggers the same final celebration flow (confetti + floating hearts) and navigates to the existing success screen with the existing success message.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-any-required-css-tailwind-animations-for-the-no-button-crack-and-fall-effect-using-the-existing-styling-approach-global-css-keyframes-utility-classes-without-introducing-external-animation-libraries",
+      "title": "Add any required CSS/Tailwind animations for the “No” button crack-and-fall effect using the existing styling approach (global CSS keyframes/utility classes) without introducing external animation libraries.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-label-text-of-the-hidden-button-revealed-after-the-no-button-cracks-falls-to-an-english-phrase-keeping-the-playful-tone-and-emojis-and-keep-its-behavior-identical-to-the-main-yes-button-trigger-confetti-floating-hearts-and-navigate-to-the-existing-success-screen",
+      "title": "Update the label text of the hidden button revealed after the “No” button cracks/falls to an English phrase (keeping the playful tone and emojis), and keep its behavior identical to the main “Yes” button (trigger confetti + floating hearts and navigate to the existing success screen).",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-user-facing-label-text-of-the-hidden-button-that-is-revealed-after-the-no-button-cracks-falls-so-it-is-in-english-playful-tone-emojis-allowed-while-keeping-all-existing-behavior-unchanged-it-must-remain-clickable-visually-distinct-and-must-invoke-the-same-success-celebration-flow-as-the-main-yes-button-confetti-floating-hearts-navigate-to-the-existing-success-screen-message",
+      "title": "Update the user-facing label text of the hidden button that is revealed after the “No” button cracks/falls so it is in English (playful tone, emojis allowed), while keeping all existing behavior unchanged: it must remain clickable, visually distinct, and must invoke the same success/celebration flow as the main “Yes” button (confetti + floating hearts + navigate to the existing success screen/message).",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create romantic Valentine proposal website with soft pink & cream theme, clean UI, gentle animations, and mobile-friendly layout",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement interactive quiz flow (4 questions) with multiple choice answers for Q1–Q3 as specified and per-question validation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "After each correct quiz answer, show small heart animation and/or soft romantic feedback text",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "After the third question, smoothly transition to final proposal screen with preface text and main question",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Proposal screen: display “Will you be my Valentine?” with Yes/No buttons; No button dodges cursor/touch with magnetic repulsion within screen bounds (desktop + mobile)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "On Yes click, trigger confetti + floating hearts animations and show final romantic message",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Enhance No button: keep magnetic repulsion, but if No is clicked trigger cracking/eggshell break-and-fall animation revealing a hidden “yes azhuthu di oyaan 💕😉” button underneath; hidden button behaves like main Yes and triggers same final celebration",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Romantic Valentine proposal website with interactive quiz and playful Yes/No proposal interaction",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
